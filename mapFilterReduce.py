@@ -19,8 +19,15 @@ listaPares1 = filter(esPar, lista)
 
 # Reduce:
 sumatorio = reduce(lambda x, y: x + y, lista)
-sumatorioDobles = reduce(lambda x, y: x + y * 2, lista)
 suma100 = reduce(lambda x, y: x + y, range(101))
+
+# Solucionar primera posición reduce para suma
+# creo copia de la lista
+l = lista[:]
+# añado el neutro para la suma en la posición cero
+l.insert(0,0)
+sumatorioDobles = reduce(lambda x, y: x + y * 2, l)
+
 
 print(list(listaPares))
 print(list(listaPares1))
